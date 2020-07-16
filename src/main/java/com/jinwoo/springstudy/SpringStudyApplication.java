@@ -4,6 +4,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+//Lang : Java 8 (OpenJDK)
+//DB : PostgreSQL, H2(for test)
+//ORM : JPA
+//Back-End : Spring Boot (ver. 2.3.1)
+//Frond-End : Handlebars
+//Templete : Bootstrap(Admin LTE)
+//Build : Maven
+//작성자 : Jinwoo
+
+
 @EnableJpaAuditing // JPA Auditing 활성화
 @SpringBootApplication
 public class SpringStudyApplication {

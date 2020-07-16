@@ -2,6 +2,7 @@ package com.jinwoo.springstudy.controller;
 
 import com.jinwoo.springstudy.dto.PostSaveRequestDto;
 import com.jinwoo.springstudy.repository.PostRepository;
+import com.jinwoo.springstudy.service.PostService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@AllArgsConstructor
+@AllArgsConstructor // Lombok
 public class PostController {
+
+    private PostService postService;
 
     private PostRepository postRepository;
 
@@ -20,7 +23,7 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public void savePost(@RequestBody PostSaveRequestDto dto){
-        postRepository.save(dto.toEntity());
+    public Long savePost(@RequestBody PostSaveRequestDto dto){
+        return postService.save(dto);
     }
 }

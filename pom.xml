@@ -63,6 +63,16 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        
+        <dependency>
+            <groupId>pl.allegro.tech.boot</groupId>
+            <artifactId>handlebars-spring-boot-starter</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
