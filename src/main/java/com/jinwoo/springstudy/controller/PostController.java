@@ -16,7 +16,7 @@ public class PostController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "HelloWorld";
+        return "HelloWorld Test";
     }
 
     @PostMapping("/post")
