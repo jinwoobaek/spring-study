@@ -22,6 +22,7 @@ public class PostSaveRequestDto {
         this.author = author;
     }
 
+
     public Post toEntity() {
         return Post.builder()
                 .title(title)

@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Stream;
+
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -47,7 +49,7 @@ public class PostRepositoryTest {
     }
 
     @Test
-    public void BaseTimeEntity_등록(){
+    public void BaseTimeEntity_등록() {
         //given
         LocalDateTime now = LocalDateTime.now();
         postRepository.save(Post.builder()
@@ -56,11 +58,12 @@ public class PostRepositoryTest {
                 .author("back3946@gmail.com")
                 .build());
         //when
-        List<Post> postsList = postRepository.findAll();
+        List<Post> postList = postRepository.findAll();
 
         //then
-        Post posts = postsList.get(0);
+        Post posts = postList.get(0);
         assertTrue(posts.getCreatedDate().isAfter(now));
         assertTrue(posts.getModifiedDate().isAfter(now));
     }
+
 }
