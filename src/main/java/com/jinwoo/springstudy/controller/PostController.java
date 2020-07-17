@@ -1,7 +1,6 @@
 package com.jinwoo.springstudy.controller;
 
 import com.jinwoo.springstudy.dto.PostSaveRequestDto;
-import com.jinwoo.springstudy.repository.PostRepository;
 import com.jinwoo.springstudy.service.PostService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
     private PostService postService;
-
-    private PostRepository postRepository;
 
     @GetMapping("/hello")
     public String hello() {
