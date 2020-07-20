@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 //Lang : Java 8 (OpenJDK)
-//DB : PostgreSQL, H2(for test)
+//DB : H2(for test)
 //ORM : JPA
 //Back-End : Spring Boot (ver. 2.3.1)
-//Templete : Bootstrap, Handlebars
+//Templete : Bootstrap, Mustache
 //Build : Maven
 //작성자 : Jinwoo
 
