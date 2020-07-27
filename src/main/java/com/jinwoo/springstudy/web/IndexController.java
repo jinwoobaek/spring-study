@@ -1,5 +1,6 @@
 package com.jinwoo.springstudy.web;
 
+import com.jinwoo.springstudy.config.auth.LoginUser;
 import com.jinwoo.springstudy.config.auth.dto.SessionUser;
 import com.jinwoo.springstudy.service.posts.PostsService;
 import com.jinwoo.springstudy.web.dto.PostsResponseDto;
@@ -20,13 +21,16 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAll()); // findAll로 가져온걸 "posts" 라는 이름으로 넘김 (템플릿 엔진에서 사용할 수 있는 객체로 저장)
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // @LoginUser를 생성해 주어서 해당 코드가 필요없다
 
         if (user != null) {
-            model.addAttribute("userName", user.getName());
+            System.out.println(user.getName());
+            System.out.println(user.getEmail());
+            System.out.println(user.getPicture());
+            model.addAttribute("googleUserName", user.getName()); // "userName" 변수명은 윈도우 환경변수명 %USERNAME%로 인해 오류
         }
 
         return "index";
