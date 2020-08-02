@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 //DB : H2(for test)
 //ORM : JPA
 //Back-End : Spring Boot (ver. 2.3.1)
-//Templete : Bootstrap, Mustache
+//Templete : Bootstrap, thymeleaf
 //Build : Maven
 //작성자 : Jinwoo
 
